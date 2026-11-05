@@ -1,0 +1,32 @@
+LAB 7 - FIXED
+Directory: fixed/
+Command: python -m pytest test_atm_withdrawal.py -q --tb=short -rA
+--------------------------------------------------------------------
+......................                                                   [100%]
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED test_atm_withdrawal.py::test_notes_needed_no_crash
+PASSED test_atm_withdrawal.py::test_mask_card_no_crash
+PASSED test_atm_withdrawal.py::test_average_withdrawal_no_crash
+PASSED test_atm_withdrawal.py::test_notes_needed_valid_amount
+PASSED test_atm_withdrawal.py::test_mask_card_keeps_only_last_four
+PASSED test_atm_withdrawal.py::test_average_withdrawal_valid_csv
+PASSED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[]
+PASSED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[abc]
+PASSED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[1,2,3]
+PASSED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[-100]
+PASSED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[1.5]
+PASSED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[None]
+PASSED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[]
+PASSED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[1234]
+PASSED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[1234 5678]
+PASSED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[0000 0000 0000 XXXX]
+PASSED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[None]
+PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[]
+PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[100,,300]
+PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[100,hello]
+PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[-100,200]
+PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[None]
+22 passed in 2.78s
+
+Process exit code: 0

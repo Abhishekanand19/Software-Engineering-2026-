@@ -1,0 +1,15 @@
+LAB 7 - FIXED
+Directory: fixed/
+Command: python atm_withdrawal.py
+Scripted console input: 'abc\n1234\n100,,300\n'
+--------------------------------------------------------------------
+==== Running notes_needed ====
+Enter an amount (e.g. 2,500): Number of 100 Notes: 0
+
+==== Running mask_card ====
+Enter a card number (e.g. 1234 5678 9012 3456): Masked Card: Invalid card number
+
+==== Running average_withdrawal ====
+Enter withdrawals as CSV (e.g. 500,1000,2000): Average Withdrawal: 0
+
+Process exit code: 0

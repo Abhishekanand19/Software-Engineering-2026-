@@ -1,0 +1,244 @@
+LAB 7 - BUGGY
+Directory: buggy/
+Command: python -m pytest test_atm_withdrawal.py -q --tb=short -rA
+--------------------------------------------------------------------
+FFF...FFFFFFFFFFFFFFFF                                                   [100%]
+================================== FAILURES ===================================
+_________________________ test_notes_needed_no_crash __________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 13, in test_notes_needed_no_crash
+  |     @given(st.text(max_size=100) | st.none())
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 15, in test_notes_needed_no_crash
+    |     result = notes_needed(s)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 2, in notes_needed
+    |     return int(amount.replace(',', '')) // 100
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing test case: test_notes_needed_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 15, in test_notes_needed_no_crash
+    |     result = notes_needed(s)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 2, in notes_needed
+    |     return int(amount.replace(',', '')) // 100
+    |                ^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'replace'
+    | Failing test case: test_notes_needed_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+___________________________ test_mask_card_no_crash ___________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 21, in test_mask_card_no_crash
+  |     @given(st.text(max_size=100) | st.none())
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 23, in test_mask_card_no_crash
+    |     result = mask_card(s)
+    |              ^^^^^^^^^^^^
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 6, in mask_card
+    |     return "XXXX XXXX XXXX " + groups[3]
+    |                                ~~~~~~^^^
+    | IndexError: list index out of range
+    | Failing test case: test_mask_card_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 23, in test_mask_card_no_crash
+    |     result = mask_card(s)
+    |              ^^^^^^^^^^^^
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 5, in mask_card
+    |     groups = card_number.split()
+    |              ^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_mask_card_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+______________________ test_average_withdrawal_no_crash _______________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 29, in test_average_withdrawal_no_crash
+  |     @given(st.text(max_size=100) | st.none())
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 31, in test_average_withdrawal_no_crash
+    |     result = average_withdrawal(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 9, in average_withdrawal
+    |     amounts = [int(a) for a in amounts_csv.split(',')]
+    |                ^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing test case: test_average_withdrawal_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\test_atm_withdrawal.py", line 31, in test_average_withdrawal_no_crash
+    |     result = average_withdrawal(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 9, in average_withdrawal
+    |     amounts = [int(a) for a in amounts_csv.split(',')]
+    |                                ^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_average_withdrawal_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+__________________ test_notes_needed_invalid_returns_zero[] ___________________
+test_atm_withdrawal.py:58: in test_notes_needed_invalid_returns_zero
+    assert notes_needed(bad) == 0
+           ^^^^^^^^^^^^^^^^^
+atm_withdrawal.py:2: in notes_needed
+    return int(amount.replace(',', '')) // 100
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ValueError: invalid literal for int() with base 10: ''
+_________________ test_notes_needed_invalid_returns_zero[abc] _________________
+test_atm_withdrawal.py:58: in test_notes_needed_invalid_returns_zero
+    assert notes_needed(bad) == 0
+           ^^^^^^^^^^^^^^^^^
+atm_withdrawal.py:2: in notes_needed
+    return int(amount.replace(',', '')) // 100
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ValueError: invalid literal for int() with base 10: 'abc'
+________________ test_notes_needed_invalid_returns_zero[1,2,3] ________________
+test_atm_withdrawal.py:58: in test_notes_needed_invalid_returns_zero
+    assert notes_needed(bad) == 0
+E   AssertionError: assert 1 == 0
+E    +  where 1 = notes_needed('1,2,3')
+________________ test_notes_needed_invalid_returns_zero[-100] _________________
+test_atm_withdrawal.py:58: in test_notes_needed_invalid_returns_zero
+    assert notes_needed(bad) == 0
+E   AssertionError: assert -1 == 0
+E    +  where -1 = notes_needed('-100')
+_________________ test_notes_needed_invalid_returns_zero[1.5] _________________
+test_atm_withdrawal.py:58: in test_notes_needed_invalid_returns_zero
+    assert notes_needed(bad) == 0
+           ^^^^^^^^^^^^^^^^^
+atm_withdrawal.py:2: in notes_needed
+    return int(amount.replace(',', '')) // 100
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ValueError: invalid literal for int() with base 10: '1.5'
+________________ test_notes_needed_invalid_returns_zero[None] _________________
+test_atm_withdrawal.py:58: in test_notes_needed_invalid_returns_zero
+    assert notes_needed(bad) == 0
+           ^^^^^^^^^^^^^^^^^
+atm_withdrawal.py:2: in notes_needed
+    return int(amount.replace(',', '')) // 100
+               ^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'replace'
+__________________ test_mask_card_invalid_returns_message[] ___________________
+test_atm_withdrawal.py:63: in test_mask_card_invalid_returns_message
+    assert mask_card(bad) == "Invalid card number"
+           ^^^^^^^^^^^^^^
+atm_withdrawal.py:6: in mask_card
+    return "XXXX XXXX XXXX " + groups[3]
+                               ^^^^^^^^^
+E   IndexError: list index out of range
+________________ test_mask_card_invalid_returns_message[1234] _________________
+test_atm_withdrawal.py:63: in test_mask_card_invalid_returns_message
+    assert mask_card(bad) == "Invalid card number"
+           ^^^^^^^^^^^^^^
+atm_withdrawal.py:6: in mask_card
+    return "XXXX XXXX XXXX " + groups[3]
+                               ^^^^^^^^^
+E   IndexError: list index out of range
+______________ test_mask_card_invalid_returns_message[1234 5678] ______________
+test_atm_withdrawal.py:63: in test_mask_card_invalid_returns_message
+    assert mask_card(bad) == "Invalid card number"
+           ^^^^^^^^^^^^^^
+atm_withdrawal.py:6: in mask_card
+    return "XXXX XXXX XXXX " + groups[3]
+                               ^^^^^^^^^
+E   IndexError: list index out of range
+_________ test_mask_card_invalid_returns_message[0000 0000 0000 XXXX] _________
+test_atm_withdrawal.py:63: in test_mask_card_invalid_returns_message
+    assert mask_card(bad) == "Invalid card number"
+E   AssertionError: assert 'XXXX XXXX XXXX XXXX' == 'Invalid card number'
+E     
+E     - Invalid card number
+E     + XXXX XXXX XXXX XXXX
+________________ test_mask_card_invalid_returns_message[None] _________________
+test_atm_withdrawal.py:63: in test_mask_card_invalid_returns_message
+    assert mask_card(bad) == "Invalid card number"
+           ^^^^^^^^^^^^^^
+atm_withdrawal.py:5: in mask_card
+    groups = card_number.split()
+             ^^^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+_____________________ test_average_invalid_returns_zero[] _____________________
+test_atm_withdrawal.py:68: in test_average_invalid_returns_zero
+    assert average_withdrawal(bad) == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^
+atm_withdrawal.py:9: in average_withdrawal
+    amounts = [int(a) for a in amounts_csv.split(',')]
+               ^^^^^^
+E   ValueError: invalid literal for int() with base 10: ''
+_________________ test_average_invalid_returns_zero[100,,300] _________________
+test_atm_withdrawal.py:68: in test_average_invalid_returns_zero
+    assert average_withdrawal(bad) == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^
+atm_withdrawal.py:9: in average_withdrawal
+    amounts = [int(a) for a in amounts_csv.split(',')]
+               ^^^^^^
+E   ValueError: invalid literal for int() with base 10: ''
+________________ test_average_invalid_returns_zero[100,hello] _________________
+test_atm_withdrawal.py:68: in test_average_invalid_returns_zero
+    assert average_withdrawal(bad) == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^
+atm_withdrawal.py:9: in average_withdrawal
+    amounts = [int(a) for a in amounts_csv.split(',')]
+               ^^^^^^
+E   ValueError: invalid literal for int() with base 10: 'hello'
+_________________ test_average_invalid_returns_zero[-100,200] _________________
+test_atm_withdrawal.py:68: in test_average_invalid_returns_zero
+    assert average_withdrawal(bad) == 0
+E   AssertionError: assert 50 == 0
+E    +  where 50 = average_withdrawal('-100,200')
+___________________ test_average_invalid_returns_zero[None] ___________________
+test_atm_withdrawal.py:68: in test_average_invalid_returns_zero
+    assert average_withdrawal(bad) == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^
+atm_withdrawal.py:9: in average_withdrawal
+    amounts = [int(a) for a in amounts_csv.split(',')]
+                               ^^^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED test_atm_withdrawal.py::test_notes_needed_valid_amount
+PASSED test_atm_withdrawal.py::test_mask_card_keeps_only_last_four
+PASSED test_atm_withdrawal.py::test_average_withdrawal_valid_csv
+FAILED test_atm_withdrawal.py::test_notes_needed_no_crash - ExceptionGroup: H...
+FAILED test_atm_withdrawal.py::test_mask_card_no_crash - ExceptionGroup: Hypo...
+FAILED test_atm_withdrawal.py::test_average_withdrawal_no_crash - ExceptionGr...
+FAILED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[] - Val...
+FAILED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[abc] - ...
+FAILED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[1,2,3]
+FAILED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[-100]
+FAILED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[1.5] - ...
+FAILED test_atm_withdrawal.py::test_notes_needed_invalid_returns_zero[None]
+FAILED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[] - Ind...
+FAILED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[1234]
+FAILED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[1234 5678]
+FAILED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[0000 0000 0000 XXXX]
+FAILED test_atm_withdrawal.py::test_mask_card_invalid_returns_message[None]
+FAILED test_atm_withdrawal.py::test_average_invalid_returns_zero[] - ValueErr...
+FAILED test_atm_withdrawal.py::test_average_invalid_returns_zero[100,,300] - ...
+FAILED test_atm_withdrawal.py::test_average_invalid_returns_zero[100,hello]
+FAILED test_atm_withdrawal.py::test_average_invalid_returns_zero[-100,200] - ...
+FAILED test_atm_withdrawal.py::test_average_invalid_returns_zero[None] - Attr...
+19 failed, 3 passed in 6.50s
+
+Process exit code: 1

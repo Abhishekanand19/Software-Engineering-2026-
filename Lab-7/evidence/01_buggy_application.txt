@@ -1,0 +1,18 @@
+LAB 7 - BUGGY
+Directory: buggy/
+Command: python atm_withdrawal.py
+Scripted console input: 'abc\n1234\n100,,300\n'
+--------------------------------------------------------------------
+==== Running notes_needed ====
+Enter an amount (e.g. 2,500): Traceback (most recent call last):
+  File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 29, in <module>
+    main()
+  File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 15, in main
+    result = notes_needed(user_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anand\Downloads\Lab-7-automation-fixed\Software-Engineering-2026-\Lab-7\.lab7_runs\buggy\atm_withdrawal.py", line 2, in notes_needed
+    return int(amount.replace(',', '')) // 100
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'abc'
+
+Process exit code: 1
