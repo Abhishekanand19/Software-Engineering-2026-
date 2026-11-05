@@ -27,6 +27,6 @@ PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[100,,300]
 PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[100,hello]
 PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[-100,200]
 PASSED test_atm_withdrawal.py::test_average_invalid_returns_zero[None]
-22 passed in 0.99s
+22 passed in 1.02s
 
 Process exit code: 0
